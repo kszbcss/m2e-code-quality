@@ -62,7 +62,7 @@
         <repository>
             <id>cs</id>
             <layout>p2</layout>
-            <url>http://eclipse-cs.sourceforge.net/update</url>
+            <url>http://sourceforge.net/projects/eclipse-cs/files/updatesite/6.4.0</url>
         </repository>
         <repository>
             <id>pmd</id>
