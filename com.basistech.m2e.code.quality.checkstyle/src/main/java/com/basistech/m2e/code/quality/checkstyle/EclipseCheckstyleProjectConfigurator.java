@@ -41,6 +41,8 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.m2e.core.project.IMavenProjectFacade;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.basistech.m2e.code.quality.shared.AbstractMavenPluginProjectConfigurator;
 import com.basistech.m2e.code.quality.shared.MavenPluginWrapper;
@@ -49,6 +51,10 @@ import com.basistech.m2e.code.quality.shared.MavenPluginWrapper;
  */
 public class EclipseCheckstyleProjectConfigurator extends
         AbstractMavenPluginProjectConfigurator {
+	
+	private static final Logger log =
+	        LoggerFactory
+	                .getLogger("com/basistech/m2e/code/quality/findbugs/EclipseCheckstyleProjectConfigurator");	
 
 	private final IConfigurationType remoteConfigurationType =
 	        ConfigurationTypes.getByInternalName("remote");
@@ -118,7 +124,7 @@ public class EclipseCheckstyleProjectConfigurator extends
 			}
 
 		} catch (CheckstylePluginException ex) {
-			// MavenLogger.log("CheckstylePluginException", ex);
+			log.error("CheckstylePluginException", ex);
 		}
 	}
 
